@@ -1,9 +1,12 @@
 # MdRuz_utilities
 Rimworld 1.6/1.5 mod
 TL;DR: automates some tasks, such as: medicine switching, drug policy, zone switching. Introduces 'Bill' persistence if building is rebuilt it will keep its bills intact. Revamps almost all psycasts, and more.
-
-
-
+.
+.
+.
+.
+.
+.
 more info:
 -bills inside production buildings will never be lost if that building got destroyed by raiders. (enable autorebuild in the game UI -> bottom right (hammer icon))
 
@@ -19,13 +22,21 @@ it only switches the area of pawns which are already assigned between the area p
 developed immunity to an infection, switches back to 'doctor care but no medicine'
 this function is performed only once, so that the player can switch their preference back to whatever at anytime.
 
+-colonists inside caskets are not counted for colony wealth calculation. should support any building where a pawn can go into
+-slaves counted as 50% of pawn value. (instead of vanilla 75%)
+
 -pawns below 50% mood lose certainty faith or belief in their ideo (instead of vanilla where they always gain it no matter what)
 resulting in prisoners moving towards crisis of belief when unhappy. makes tiny easier to convert them.
 it also applies to colonists but that by itself does NOT have any effect
 
 -new ritual reward which replaces Random Recruit. Taunt enemies. 60% chance of triggering a very small raid to attack your colony.
 
--colonists inside caskets are not counted for colony wealth calculation. should support any building where a pawn can go into
 
--slaves counted as 50% of pawn value. (instead of vanilla 75%)
+
+included in full release:
+-sets drug policy to "No drugs" for any colonist below 18. requires that at least one policy has "No drugs" label.
+updates the policy on pawn birthday or pawn faction change. example: 1yr old becomes 2yr old, age <18 prisoner gets recruited.
+does not update policy when spawning <18 in dev mode or when they just appear. (optimization)
+
+-rebalance of psycasts
 
