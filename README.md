@@ -1,6 +1,9 @@
 # MdRuz_utilities
 Rimworld 1.6/1.5 mod
-TL;DR: automates some tasks, such as: medicine switching, drug policy, zone switching. Introduces 'Bill' persistence if building is rebuilt it will keep its bills intact. Revamps almost all psycasts, and more.
+TL;DR: automates some tasks, such as: medicine switching(on infection), auto zone switch (if danger on map),
+sets Nodrugs policy for colonists >18, and way more
+Introduces 'Bill' persistence if building is rebuilt it will keep its bills intact.
+apart from that, the full release version revamps almost all psycasts and has some tweaks.
 
 
 
