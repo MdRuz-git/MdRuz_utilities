@@ -1,12 +1,9 @@
 # MdRuz_utilities
 Rimworld 1.6/1.5 mod
 TL;DR: automates some tasks, such as: medicine switching, drug policy, zone switching. Introduces 'Bill' persistence if building is rebuilt it will keep its bills intact. Revamps almost all psycasts, and more.
-.
-.
-.
-.
-.
-.
+
+
+
 more info:
 -bills inside production buildings will never be lost if that building got destroyed by raiders. (enable autorebuild in the game UI -> bottom right (hammer icon))
 
