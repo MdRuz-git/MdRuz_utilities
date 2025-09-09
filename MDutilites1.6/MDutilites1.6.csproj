@@ -38,6 +38,8 @@
     <Compile Include="Source\autoRestoreBills.cs" />
     <Compile Include="Source\autoZONEswitch.cs" />
     <Compile Include="Source\CellFinderLoose_TryFindRandomNotEdgeCellWith.cs" />
+    <Compile Include="Source\GroundPenetratingScanner_clearall.cs" />
+    <Compile Include="Source\improveShortcutAssigment.cs" />
     <Compile Include="Source\LoseTheFaith.cs" />
     <Compile Include="Source\medicineSwitcher.cs" />
     <Compile Include="Source\NerfRandomRecruitRitualOutcome.cs" />
@@ -47,6 +49,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\PathingFIX\PathGrid_CalculatedCostAt.cs" />
     <Compile Include="Source\RelationHigherLimit.cs" />
+    <Compile Include="Source\UnLearnDevice\Building_TortureDevice.cs" />
+    <Compile Include="Source\UnLearnDevice\Dialog_UnlearningConfig.cs" />
+    <Compile Include="Source\UnLearnDevice\JobDriver_UseUnlearningDevice.cs" />
+    <Compile Include="Source\UnLearnDevice\TUDefOf.cs" />
+    <Compile Include="Source\UnLearnDevice\WorkGiver_UseUnlearningDevice.cs" />
     <Compile Include="Source\WealthWatcher_ForceRecount.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +65,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="oldtrash\PatchOperation\" />
+    <Folder Include="oldtrash\PathingFIX\" />
+    <Folder Include="oldtrash\UnLearnDevice\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using PawnShortcutCycle;
 using RimWorld;
 using System.Collections.Generic;
 using System.Reflection;
@@ -18,7 +19,8 @@ namespace MDutility
         static MDutility()
         {
             Harm = new Harmony(MY_MOD_ID);
-            
+            //Harmony.DEBUG = true;
+            //Harm.PatchAll(); 
 
            //had to separate all patches just for this one, since tweaking cellfinder just seems not safe
            //so at least I'm not gonna touch it if any other mod tries to do the same
@@ -62,15 +64,13 @@ namespace MDutility
             postfix: new HarmonyMethod(typeof(Dialog_ManageAreas_DoAreaRow_Patch), nameof(Dialog_ManageAreas_DoAreaRow_Patch.Postfix))
              );
 
-            
-
-
-
             //autoRestoreBills.cs
+            /* this was wrong and unnecessary
             Harm.Patch(
                 original: AccessTools.Method(typeof(Map), nameof(Map.FinalizeInit)),
                 postfix: new HarmonyMethod(typeof(Map_FinalizeInit_Patch), nameof(Map_FinalizeInit_Patch.Postfix))
             );
+            */
             Harm.Patch(
                 original: AccessTools.Method(typeof(Building), nameof(Building.SpawnSetup)),
                 postfix: new HarmonyMethod(typeof(Building_SpawnSetup_Patch), nameof(Building_SpawnSetup_Patch.Postfix))
@@ -86,16 +86,32 @@ namespace MDutility
                 postfix: new HarmonyMethod(typeof(PathGrid_CalculatedCostAt), nameof(PathGrid_CalculatedCostAt.Postfix))
             );
 
+            //improveShortcutAssigment.cs
+            /*
+            Harm.Patch(
+                AccessTools.Method(typeof(Command_Ability), "ProcessInput"),
+                prefix: new HarmonyMethod(typeof(GizmoShortcutCycle), nameof(GizmoShortcutCycle.Command_Ability_ProcessInput_Prefix))
+            );
+            */
+            Harm.Patch(
+                AccessTools.Method(typeof(Command_Psycast), "DisabledCheck"),
+                prefix: new HarmonyMethod(typeof(GizmoShortcutCycle), nameof(GizmoShortcutCycle.Postfix))
+            );
+
             /*
             Harm.Patch(
             original: AccessTools.Method(typeof(SnowUtility), nameof(SnowUtility.MovementTicksAddOn)),
             transpiler: new HarmonyMethod(typeof(PathGrid_CalculatedCostAt), nameof(PathGrid_CalculatedCostAt.MovementTicksAddOnIgnoreZero))
             );
             */
-
-
-
             /*
+            //improveShortcutAssigment.cs
+            Harm.Patch(
+                AccessTools.Method(typeof(Command_Ability), "ProcessInput"),
+                prefix: new HarmonyMethod(typeof(PawnShortcutCycleMod), nameof(PawnShortcutCycleMod.Command_Ability_ProcessInput_Prefix))
+            );
+
+            
             //autoDrugpolicy_kid
             Harm.Patch(
                 original: typeof(Pawn_AgeTracker).Method("BirthdayBiological"),

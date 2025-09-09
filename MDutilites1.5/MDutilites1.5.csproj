@@ -38,6 +38,8 @@
     <Compile Include="Source\autoRestoreBills.cs" />
     <Compile Include="Source\autoZONEswitch.cs" />
     <Compile Include="Source\CellFinderLoose_TryFindRandomNotEdgeCellWith.cs" />
+    <Compile Include="Source\GroundPenetratingScanner_clearall.cs" />
+    <Compile Include="Source\improveShortcutAssigment.cs" />
     <Compile Include="Source\LoseTheFaith.cs" />
     <Compile Include="Source\medicineSwitcher.cs" />
     <Compile Include="Source\NerfRandomRecruitRitualOutcome.cs" />
@@ -45,6 +47,11 @@
     <Compile Include="Source\PatchOperationSet.cs" />
     <Compile Include="Source\PathingFIX\PathGrid_CalculatedCostAt.cs" />
     <Compile Include="Source\RelationHigherLimit.cs" />
+    <Compile Include="Source\UnLearnDevice\Building_TortureDevice.cs" />
+    <Compile Include="Source\UnLearnDevice\Dialog_UnlearningConfig.cs" />
+    <Compile Include="Source\UnLearnDevice\JobDriver_UseUnlearningDevice.cs" />
+    <Compile Include="Source\UnLearnDevice\TUDefOf.cs" />
+    <Compile Include="Source\UnLearnDevice\WorkGiver_UseUnlearningDevice.cs" />
     <Compile Include="Source\WealthWatcher_ForceRecount.cs" />
     <Compile Include="Source\PatchALL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

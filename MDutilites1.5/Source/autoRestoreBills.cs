@@ -6,21 +6,20 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-/* compiled for rimworld 1.5, will see if it survives 1.6
- * 
- * 
- * This class remembers all bills inside any player production building per map
+/* 
+ * remembers all bills inside any player production building per map
  * ?if that building ever gets destroyed (not deconstructed)
  * ?then if its ever rebuilt
  *
  * =the bills will still be there
  * 
- * purposefully made so that it never actually scans the whole map or anything like that (except when first loading savefile) you wont notice
+ * purposefully made so that it never actually scans the whole map or anything like that
  * should not have any impact of TPS 
  *
  *when player building is destroyed
  *if its production building
- *save it as hash and copy of its recipes
+ *save it as hash and copy of its recipes (objects)
+ *
  *when building is spawned (which only gets called on map initialization and when building something)
  *
  *
@@ -51,6 +50,8 @@ namespace MDutility
             BillManager.InitializeBills(this);
         }
 
+        /* 
+         * had to remove the ability of deepsaving since I just can't figure out how to assign unique ID to copied bill objects
         //writes and reads savegame file
         public override void ExposeData()
         {
@@ -61,35 +62,21 @@ namespace MDutility
             if (savedBills == null) savedBills = new Dictionary<string, List<Bill>>();
             if (destroyedBuildings == null) destroyedBuildings = new HashSet<string>();
         }
+        */
     }
 
     public static class BillManager
     {
-        // Initialize and capture all bills on this map (per active map) runs only once
         public static void InitializeBills(BillManagerMapComponent component)
         {
-            // Run culling once GC - this shouldn't even create loop in an extreme scenario since even if the number exceeds the treshold
-            // it only runs once per map init
-            // so the only loop that would be there is if you have carefully made a dev debugging map for the purpose of breaking it
-            // where is the only thing that would happen is the list would just have to be repopulated thats it
 
-            if (component.savedBills.Count > 1000 || component.destroyedBuildings.Count > 1000)
-            {
+            //if (component.savedBills.Count > 1000 || component.destroyedBuildings.Count > 1000)
+            //{
                 component.savedBills.Clear();
                 component.destroyedBuildings.Clear();
-            }
+            //}
 
-            Map map = component.map;
 
-            foreach (Building building in map.listerBuildings.allBuildingsColonist) //only slow thing in this class, but since it only runs once i dont care. and its not even that slow
-            {
-                if (IsProductionBuilding(building))
-                {
-                    SaveAllBillsForBuilding(building, component);
-                }
-            }
-
-            //Log.Message($"BillManager initialized: Saved bills for {component.savedBills.Count} building instances");
         }
 
         public static void CheckAndRestoreBills(Building newBuilding)
@@ -176,7 +163,7 @@ namespace MDutility
         // ================================
         // 🧩 HARMONY PATCHES - moved to PatchALL
         // ================================
-
+        /*
         public static class Map_FinalizeInit_Patch
         {
             public static void Postfix(Map __instance)
@@ -187,6 +174,7 @@ namespace MDutility
                 }
             }
         }
+        */
 
         public static class Building_SpawnSetup_Patch
         {
