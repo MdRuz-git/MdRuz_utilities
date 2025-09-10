@@ -20,8 +20,12 @@ namespace UnlearnDevice
 
         public override bool ShouldSkip(Pawn pawn, bool forced = false)
         {
-            var list = pawn.Map?.listerThings.ThingsOfDef(TUDefOf.TU_UnlearningDevice);
-            return list == null || list.Count == 0;
+            if (pawn.Map == null) return true;
+
+            var devices = pawn.Map.listerThings.ThingsOfDef(TUDefOf.TU_UnlearningDevice)
+                .OfType<Building_UnlearningDevice>();
+
+            return !devices.Any(device => device.PawnAllowed(pawn) && device.HasUsableSkillsFor(pawn));
         }
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
