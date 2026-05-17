@@ -11,6 +11,36 @@ Introduces 'Bill' persistence if building is rebuilt it will keep its bills inta
 
 
 more info:  
+-**Simple, easy to use, no hassle - Road builder**  
+1 click solution, resources in -> Road out  
+cheap and accessible whenever from worldview gizmo.  
+(resources taken from any player map or any caravan. instantly)  
+
+-**weapon/apparel blacklist filter**  
+1 Click solution!  
+Works for all Stockpiles, Bills, smelters, recipes, apparel Policy!  
+simply select some weapon/apparel(can be multiple) -> press 'BackSpace' ??? DONE!  
+press 'SHIFT' + 'Backspace' to reverse.  
+it will automatically update your Apparel policy. ('Anything' 'Soldier' 'General')  
+Keybind can be changed in game settings -> controls.  
+You can also open the entire blacklist at anytime by clicking on ->Assign ->Manage apparel policies ->Blacklist (top right)  
+blacklist is saved PER game.  
+'Not blacklisted' essentially acts as a whitelist. (Filtering in RimWorld is Additive!)  
+ 
+Example use-case 1:  
+raiders loot(trash) management:  
+create destroy/smelt bill in the smelter and tick off 'Allow not blacklisted', keep all weapons/apparel checked.  
+add to the blacklist at anytime with 1 click, whatever you select.  
+works automatically!  
+  
+Example use-case 2:  
+use blacklist As 'Favorites' instead.  
+create stockpile with only the hand picked stuff without searching for each individual item.  
+  
+-**brought back noCollision** togglable in settings. Drafted pawns will be able to clip through each other when attacking an enemy.  
+(wip feature. turn off if encountering any issues)  
+
+
 -**bills inside production buildings will never be lost if that building got destroyed by raiders**.  
 (enable autorebuild in the game UI -> bottom right (hammer icon))  
 when any production building is rebuilt it will keep its original Bills/recipes  
@@ -38,12 +68,7 @@ this function is performed only once, so that the player can switch their prefer
 -**colonists inside caskets are not counted for colony wealth** calculation.  
 should support any building where a pawn can go into  
 
--**slaves counted as 50% of pawn value**. (instead of vanilla 75%)  
-
--**pawns below 50% mood lose certainty in their ideology**  
-(instead of vanilla where they always gain it no matter what)  
-resulting in prisoners moving towards crisis of belief when unhappy.  
-it also applies to colonists but that by itself does NOT have any effect (vanilla)  
+-**slaves counted as 50% of pawn value**. (instead of vanilla 75%)   
 
 -**new ritual reward which replaces Random Recruit. Taunt enemies**. 60% chance of triggering a very small raid to attack your colony.  
 
@@ -60,4 +85,4 @@ included in full release:
 updates the policy on pawn birthday or pawn faction change. example: 1yr old becomes 2yr old, age <18 prisoner gets recruited.  
 does not update policy when spawning <18 in dev mode or when they just appear. (optimization)  
 
--rebalance of psycasts  
+-betterment of psycasts  
