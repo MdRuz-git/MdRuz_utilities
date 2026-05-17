@@ -1,5 +1,6 @@
 # MdRuz_utilities
-Rimworld 1.6/1.5 mod  
+Rimworld 1.6/1.5 mod 
+[download here](https://github.com/MdRuz-git/MdRuz_utilities/releases/latest)  
 TL;DR:  
 automates some tasks, such as:  
 -medicine switching(on infection),  
