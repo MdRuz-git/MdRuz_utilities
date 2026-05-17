@@ -86,3 +86,7 @@ updates the policy on pawn birthday or pawn faction change. example: 1yr old bec
 does not update policy when spawning <18 in dev mode or when they just appear. (optimization)  
 
 -betterment of psycasts  
+![TPS](preview/TPS.PNG)
+![blacklist1](preview/blacklist1.png)
+![blacklist2](preview/blacklist2.png)
+![roadbuildsimple](preview/roadbuildsimple.png)
